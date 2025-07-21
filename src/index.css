@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+:root {
+  font-family: Poppins, sans-serif;
+  line-height: 1.5;
+  font-weight: 500, 700;
+  font-size: 18px;
+
+  /* Colors */
+  /* Primary */
+  --Cyan: hsl(180, 66%, 49%);
+  --Dark-Violet: hsl(257, 27%, 26%);
+  /* Secondary */
+  --Red: hsl(0, 87%, 67%);
+  /* Neutral */
+  --Gray: hsl(0, 0%, 75%);
+  --White: #fff;
+  --Grayish-Violet: hsl(257, 7%, 63%);
+  --Very-Dark-Blue: hsl(255, 11%, 22%);
+  --Very-Dark-Violet: hsl(260, 8%, 14%);
+  --Cyan-hover: hsla(180, 79%, 76%, 0.76);
+}
+
+@theme {
+  --color-cyan: var(--Cyan);
+  --color-dark-violet: var(--Dark-Violet);
+  --color-red: var(--Red);
+  --color-gray: var(--Gray);
+  --color-white: var(--White);
+  --color-grayish-violet: var(--Grayish-Violet);
+  --color-very-dark-blue: var(--Very-Dark-Blue);
+  --color-very-dark-violet: var(--Very-Dark-Violet);
+  --color-cyan-hover: var(--Cyan-hover);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  max-width: 144rem !important;
+}
+
+.form-background {
+  background-image: url("./assets/images/bg-shorten-desktop.svg");
+  background-size: cover;
+  background-position: right top;
+  background-repeat: no-repeat;
+}
+
+.getStarted-background {
+  background-image: url("./assets/images/bg-boost-desktop.svg");
+  background-size: cover;
+  background-position: left top;
+  background-repeat: no-repeat;
+}
