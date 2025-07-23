@@ -1,46 +1,52 @@
-### Objective
+# Product README: URL Shortening Web App
+Domain: https://tc-shorten-url.vercel.app/
 
-Using TypeScript and React, your challenge is to build out a URL shortening web app, integrate with the [cleanURI API](https://cleanuri.com/docs), and get it looking as close to the design as possible.
+## Critical Product Parts & Prioritization Criteria
 
-### Brief
+This product is a URL shortening web application built with TypeScript and React, integrating with the CleanURI API. To deliver a robust and user-friendly product, the following parts are prioritized as most critical:
 
-URL shortening is a technique on the Web in which a Uniform Resource Locator (URL) may be made substantially shorter and still direct to the required page. This is achieved by using a redirect that links to the web page that has a long URL. For example, the URL "https://example.com/assets/category_B/subcategory_C/Foo/" can be shortened to "https://cleanuri.com/WAsdZXC".
+### 1. Responsive Layout & Accessibility
 
-Your challenge is to build out this landing page, integrate with the [cleanURI API](https://cleanuri.com/docs) and get it looking as close to the design as possible.
+- **Description:** The app should look good and function well on both desktop and mobile devices, matching the provided designs.
+- **Reason for Priority:** Ensures the product is usable by all target users and meets modern web standards.
 
-Your users should be able to:
+### 2. URL Shortening Functionality
 
--   View the optimal layout for the site depending on their device's screen size
--   Shorten any valid URL
--   See a list of their shortened links, even after refreshing the browser
--   Copy the shortened link to their clipboard in a single click
--   Receive an error message when the `form` is submitted if:
-    -   The `input` field is empty
+- **Description:** Users must be able to input a URL and receive a shortened version using the CleanURI API.
+- **Reason for Priority:** This is the core feature; without it, the product does not fulfill its main purpose.
+- **Problems:** CleanURI having CORS error therefore we have to create an independent express project to use it
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design to work to along with active states.
+### 3. Copy-to-Clipboard Functionality
 
-You will find all the required assets in the `/images` folder. The assets are already optimized. The designs are in JPG static format. This will mean that you'll need to use your best judgment for styles such as `font-size`, `padding`, and `margin`.
+- **Description:** Users should be able to copy shortened links with a single click.
+- **Reason for Priority:** Key convenience feature for a URL shortener, improving user workflow.
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+### 4. Receive an error message when the form is submitted if empty
 
-### Evaluation Criteria
+- **Description:** An error message should be displayed when users submit the form with an empty or invalid URL.
+- **Reason for Priority:** This is an acceptance criterion aimed at improving the user experience by providing immediate feedback on incorrect or missing input.
+- **Approach:** Utilize Zod for client-side form validation to ensure the URL is present and correctly formatted before submission.
 
--   **TypeScript** best practices
--   Show us your work through your commit history
--   We're looking for you to produce working code, with enough room to demonstrate how to structure components in a small program
--   Completeness: did you complete the features?
--   Correctness: does the functionality act in sensible, thought-out ways?
--   Maintainability: is it written in a clean, maintainable way?
--   Testing: is the system adequately tested?
+### 5. Persistence of Shortened Links
 
-### Deliverables
+- **Description:** Users should see their list of shortened links even after refreshing the browser (handled via localStorage).
+- **Reason for Priority:** Essential for usability and user experience, allowing users to keep track of their links across sessions.
 
-Make sure to include all source code in the repository.
+---
 
-### CodeSubmit
+## Criteria for Prioritization
 
-Please organize, design, test, and document your code as if it were going into production - then push your changes to the master branch. After you have pushed your code, you may submit the assignment on the assignment page.
+- **User Journey Impact:** Features that directly affect the main user flow (shortening, viewing, and copying links) are prioritized highest.
+- **Reliability:** Persistence and error handling are essential for a professional, reliable product.
+- **Usability:** Responsive design and copy-to-clipboard are expected standards for modern web apps.
+- **MVP Focus:** Advanced features (e.g., analytics, user accounts) are less critical for a basic MVP and can be added after the above are robust.
 
-**Have fun building!** 🚀
+---
 
-The Terem Technologies Team
+## Note on Libraries and Tools
+
+The project already leverages React, TypeScript, React Query, React Hook Form, and Zod for schema validation, among others.
+UI library: Tailwind CSS
+API library: TanStack Query
+
+---
