@@ -32,7 +32,7 @@ export const ShortenUrlForm: React.FC = () => {
               />
               {errors.url ? <p className="error-text text-red-700 absolute mt-1 text-sm">{errors.url.message as string}</p> : error ? <p className="error-text text-red-700 absolute mt-1 text-sm">{error}</p> : null}
             </div>
-            <button className="primary-btn rounded-lg w-full md:w-[10rem] min-w-[120px] p-3 bg-cyan text-white text-lg font-bold transition-colors duration-300 hover:bg-cyan-hover whitespace-nowrap" type="submit" disabled={loading}>
+            <button className="primary-btn primary md:w-[10rem] min-w-[120px] p-3  whitespace-nowrap" type="submit" disabled={loading}>
               {loading ? "Loading..." : "Shorten It!"}
             </button>
           </form>
@@ -52,7 +52,7 @@ export const ShortenUrlForm: React.FC = () => {
                 <a href={link.full_short_link} target="_blank" rel="noopener noreferrer" className="shorter-fullShortLink text-cyan block py-2 no-underline break-all">
                   {link.full_short_link}
                 </a>
-                <button onClick={() => handleCopyClick(index)} className={cn("primary-btn rounded-lg w-full md:w-auto px-4 py-2 bg-cyan text-white text-base font-bold transition-colors duration-300 hover:bg-cyan-hover", copiedIndex === index && "bg-dark-violet")} disabled={loading}>
+                <button onClick={() => handleCopyClick(index)} className={cn("primary-btn primary px-4 py-2", copiedIndex === index && " !bg-dark-violet")} disabled={loading}>
                   {copiedIndex === index ? "Copied!" : "Copy"}
                 </button>
               </div>

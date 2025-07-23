@@ -10,8 +10,8 @@ export const NAV_LINKS = [
 ];
 
 export const ACTION_LINKS = [
-  { label: "Login", href: "#", className: "p-0 bg-transparent border-none text-base text-grayish-violet font-bold cursor-pointer" },
-  { label: "Sign Up", href: "#", className: "px-[25px] py-[10px] bg-cyan border-none text-base text-white font-bold cursor-pointer rounded-full transition-colors duration-300 hover:bg-cyan-hover" },
+  { label: "Login", className: "p-0 bg-transparent border-none text-base text-grayish-violet font-bold" },
+  { label: "Sign Up", className: "px-[25px] py-[10px] !rounded-full primary " },
 ];
 
 export const FOOTER_SECTIONS = [
