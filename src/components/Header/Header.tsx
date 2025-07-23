@@ -39,7 +39,7 @@ export const Header = () => {
         <ul className="flex flex-row gap-[30px] list-none pl-10">
           {NAV_LINKS.map((link) => (
             <li key={link.label}>
-              <a href={link.href} className="no-underline text-grayish-violet font-bold transition-colors duration-300 hover:text-very-dark-violet">
+              <a href={link.href} className="!no-underline text-grayish-violet font-bold transition-colors duration-300 hover:text-very-dark-violet">
                 {link.label}
               </a>
             </li>
@@ -56,7 +56,7 @@ export const Header = () => {
 
       {/* Mobile Menu Button */}
       <div className="nav-button block md:hidden ml-auto">
-        <button onClick={toggleNavMobile} aria-label="Open navigation menu">
+        <button type="button" onClick={toggleNavMobile} aria-label="Open navigation menu">
           <svg fill="#bfbfbf" width="25px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
             <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
           </svg>
@@ -69,7 +69,7 @@ export const Header = () => {
           <ul className="flex flex-col w-full gap-4 py-4 items-center m-0">
             {NAV_LINKS.map((link) => (
               <li key={link.label} className="w-full">
-                <a href={link.href} className="block w-full no-underline text-white font-bold py-2 transition-colors duration-300 hover:text-grayish-violet text-center">
+                <a href={link.href} className="block w-full !no-underline text-white font-bold py-2 transition-colors duration-300 hover:text-grayish-violet text-center">
                   {link.label}
                 </a>
               </li>
@@ -77,7 +77,7 @@ export const Header = () => {
           </ul>
           <div className="nav-buttons flex flex-col w-full items-center border-t border-gray pt-5 gap-4">
             {ACTION_LINKS.map((action) => (
-              <button type="button" key={action.label} className={`w-full text-center ${action.label === "Login" ? "text-white" : "px-8 py-3 bg-red-100 text-white rounded-full font-bold hover:bg-red-100 transition-colors duration-300"}`}>
+              <button type="button" key={action.label} className={`w-full text-center ${action.label === "Login" ? "text-white" : "px-8 py-2 primary !rounded-full"}`}>
                 {action.label}
               </button>
             ))}

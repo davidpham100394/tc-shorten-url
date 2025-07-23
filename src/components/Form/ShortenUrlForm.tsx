@@ -30,7 +30,7 @@ export const ShortenUrlForm: React.FC = () => {
                   />
                 )}
               />
-              {errors.url ? <p className="error-text text-red-700 absolute mt-1 text-sm">{errors.url.message as string}</p> : error ? <p className="error-text text-red-700 absolute mt-1 text-sm">{error}</p> : null}
+              {errors.url ? <p className="error-text text-red-400 absolute mt-1 text-sm">{errors.url.message as string}</p> : error ? <p className="error-text text-red-400 absolute mt-1 text-sm">{error}</p> : null}
             </div>
             <button className="primary-btn primary md:w-[10rem] min-w-[120px] p-3  whitespace-nowrap" type="submit" disabled={loading}>
               {loading ? "Loading..." : "Shorten It!"}

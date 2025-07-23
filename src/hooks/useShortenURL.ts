@@ -15,8 +15,13 @@ type FormData = { url: string };
 export const useShortenURL = () => {
   // State for all shortened links, initialized from localStorage
   const [links, setLinks] = useState<ShortLink[]>(() => {
-    const stored = localStorage.getItem("shortenedLinks");
-    return stored ? JSON.parse(stored) : [];
+    try {
+      const stored = localStorage.getItem("shortenedLinks");
+      return stored ? JSON.parse(stored) : [];
+    } catch (e) {
+      console.error("Failed to parse stored links:", e);
+      return [];
+    }
   });
   // State for which link was copied
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);

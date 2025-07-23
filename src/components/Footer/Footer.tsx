@@ -10,20 +10,20 @@ export const Footer = () => {
             <img src={FooterLogo} alt="Shortly" />
           </a>
 
-          <dl className="footer-nav flex flex-col gap-12 text-center m-0 md:flex-row md:gap-[4.5rem] md:text-left md:ml-[8rem]">
+          <div className="footer-nav flex flex-col gap-12 text-center m-0 md:flex-row md:gap-[4.5rem] md:text-left md:ml-[8rem]">
             {FOOTER_SECTIONS.map((section) => (
               <div key={section.title}>
-                <dt className="text-[1rem] font-bold mb-[1.25rem]">{section.title}</dt>
+                <div className="text-[1rem] font-bold mb-[1.25rem]">{section.title}</div>
                 {section.links.map((link) => (
-                  <dd className="m-0" key={link.label}>
+                  <div className="m-0" key={link.label}>
                     <a className="no-underline text-gray-400 text-[0.9rem] transition-colors duration-300 hover:text-cyan-400" href={link.href}>
                       {link.label}
                     </a>
-                  </dd>
+                  </div>
                 ))}
               </div>
             ))}
-          </dl>
+          </div>
 
           <div className="flex flex-row justify-center items-center flex-wrap pl-0 gap-[1.5rem] mt-8 md:mt-0">
             {SOCIAL_LINKS.map((social) => (
